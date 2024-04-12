@@ -9,8 +9,8 @@ import iaik.security.provider.IAIK;
 @SpringBootApplication
 public class CRAApplication {
   public static void main(String[] args) {
-    Security.addProvider(new Entrust());
-    Security.addProvider(new IAIK());
+    Security.insertProviderAt(new Entrust(), 1);
+    Security.insertProviderAt(new IAIK(), 2);
     SpringApplication.run(CRAApplication.class, args);
   }
 }
